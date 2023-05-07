@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { solveMaze, type Vec } from "./maze-solver";
+import { solveMaze, type Point } from "./maze-solver";
 
 test("maze solver", () => {
     const maze = [
@@ -34,7 +34,7 @@ test("maze solver", () => {
     expect(drawPath(maze, result)).toEqual(drawPath(maze, mazeResult));
 });
 
-function drawPath(data: string[], path: Vec[]) {
+function drawPath(data: string[], path: Point[]) {
     const data2 = data.map((row) => row.split(""));
     path.forEach((p) => {
         if (data2[p.y] && data2[p.y][p.x]) {
